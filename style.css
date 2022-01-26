@@ -1,0 +1,173 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+body{
+	font-family: Arial, sans-serif;
+  	width: 100%;
+	height: 100vh;
+	color: #fff;
+	background: linear-gradient(-45deg, #000000, #070007, #0c0c0c, #09010e);
+	background-size: 400% 400%;
+	position: relative;
+	animation: change 10s ease-in-out infinite;
+}
+nav{
+	height: 80px;
+	background: linear-gradient(-45deg, #16121a, #000000);
+}
+nav img{
+ 	height: 80px;
+	width: 150px;
+  	float: left;
+}
+nav ul{
+	float: right;
+	margin-right: 25px;
+}
+nav ul li{
+	display: inline-block;
+	line-height: 80px;
+	margin: 0 15px;
+}
+nav ul li a{
+	position: relative;
+	color: white;
+	font-size: 13px;
+	padding: 5px 0;
+	text-transform: uppercase;
+}
+nav ul li a:before{
+	position: absolute;
+	content: '';
+	left: 0;
+	bottom: 0;
+	height: 3px;
+	width: 100%;
+	background: white;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform.4s linear;
+}
+nav ul li a:hover:before{
+	transform: scaleX(1);
+	transform-origin: left;
+}
+label #btn,
+label #cancel{
+	color: white;
+	font-size: 30px;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+	display: none;
+}
+#check{
+	display: none;
+}
+#main {
+	overflow: auto;
+	padding-bottom: 100px;
+	margin: 0 auto 0 px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 100%;
+}
+
+#header {
+	
+	width: 100%;
+}
+
+.dp {
+	height: 320px;
+	width: 240px;
+	justify-content: left;
+}
+
+.w3-cell-row {
+	margin-top: 5%;
+}
+
+.intro{
+	justify-content: right;
+}
+
+#about {
+	font-size: 20px;
+	text-align: center;
+	margin-right: 100px;
+	margin-left: 100px; 
+}
+
+
+@media (max-width: 1118px) {
+	nav img{
+		left: 8%;
+	}
+}
+@media (max-width: 944px) {
+	nav img{
+		left: 6%;
+		top: 20px;
+		width: 130px;
+	}
+}
+
+
+
+
+
+@media (max-width: 860px) {
+	label #btn{
+		display: block;
+	}
+	ul{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: #34495e;
+		top: 80px;
+		left: -100%;
+		text-align: center;
+		transition: all .5s;
+	}
+	nav ul li{
+		display: block;
+		margin: 50px 0;
+		line-height: 30px;
+	}
+	nav ul li a{
+		font-size: 20px;
+	}
+	#check:checked ~ ul{
+		left: 0; 
+	}
+	#check:checked ~ label #btn{
+		display: none;
+	}
+	#check:checked ~ label #cancel{
+		display: block;
+	}
+	nav img{
+		left: 6%;
+		top: 20px;
+		width: 130px;
+	}
+}
+@keyframes change {
+
+	0% {
+		background-position: 0 50%;
+	}
+	50%{
+		background-position: 100% 50%;
+	}
+	100%{
+		background-position: 0 50%;
+	}
+}
